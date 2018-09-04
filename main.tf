@@ -42,13 +42,6 @@ provider "aws" {
   version = "~> 1.17"
 }
 
-module "internal_zone_label" {
-  source    = "git::ssh://git@bitbucket.org/swatrider/tf-modules.git?ref=master//naming"
-  namespace = "swat"
-  stage     = "svc"
-  name      = "${var.internal_subdomain}"
-}
-
 data "aws_caller_identity" "current" {}
 
 # # TODO: Aviatrix names are hardcoded, review when updated
